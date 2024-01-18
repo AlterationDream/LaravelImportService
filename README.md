@@ -3,8 +3,8 @@
 интегрированность значений.  
 
 ### Удобный фасад для последовательного анализа JSON
-![facade](https://github.com/AlterationDream/LaravelImportService/blob/main/1.pnh?raw=true)
+![plot](./1.png)
 ### Правила чтения для каждого поля с уникальным текстом ошибки чтения и возможностью пропустить чтение только одного ошибочного элемента. 
-![facade](https://github.com/AlterationDream/LaravelImportService/blob/main/1.pnh?raw=true)
+![plot](./2.png)
 ### Модель для сохранения импортированных данных в формат, удобный для записи в БД.
-![facade](https://github.com/AlterationDream/LaravelImportService/blob/main/1.pnh?raw=true)
+![plot](./3.png)
