@@ -8,8 +8,6 @@ use App\Services\Import\ContractPayments1C\ReadService as ContractPaymentsReadSe
 use App\Services\Import\ContractPayments1C\WriteService as ContractPaymentsWriteService;
 use App\Services\Import\ContractExecutions\ReadService as ContractExecutionsReadService;
 use App\Services\Import\ContractExecutions\WriteService as ContractExecutionsWriteService;
-use App\Services\Import\SubContractors\ReadService as SubContractorsReadService;
-use App\Services\Import\SubContractors\WriteService as SubContractorsWriteService;
 
 use Exception;
 
@@ -81,22 +79,6 @@ class ImportFrom1CService
         $importedData = (new ContractExecutionsReadService($validatedDataArray))->read();
         (new ContractExecutionsWriteService($importedData))->importRecords();
         self::logInfo('Выгрузка актов выполнения закончена.');
-    }
-
-
-    /**
-     * Запустить импорт соисполнителей.
-     *
-     * @param array $validatedDataArray
-     * @return void
-     * @throws Exception
-     */
-    public function importSubContractors(array &$validatedDataArray): void
-    {
-        self::logInfo('Начало выгрузки соисполнителей.');
-        $importedData = (new SubContractorsReadService($validatedDataArray))->read();
-        (new SubContractorsWriteService($importedData))->importRecords();
-        self::logInfo('Выгрузка соисполнителей закончена.');
     }
 
     /**

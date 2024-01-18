@@ -38,14 +38,4 @@ class ImportController extends Controller
         unset($request);
         $importService->importContractExecutions($validatedData);
     }
-
-    /**
-     * @throws Exception
-     */
-    public function subContractors(ImportRequest $request, ImportFrom1CService $importService)
-    {
-        $validatedData = $request->validated()['data'];
-        unset($request);
-        $importService->importSubContractors($validatedData);
-    }
 }
